@@ -8,10 +8,10 @@ document.addEventListener('DOMContentLoaded', function () {
   clock.appendChild(seconds)
 
 
-  // var now = new Date()
-  //   var h = now.getHours()
-  //   var m = now.getMinutes()
-  //   var s = now.getSeconds()
+  var now = new Date()
+    var h = now.getHours()
+    var m = now.getMinutes()
+    var s = now.getSeconds()
 
   var count = 0
 
@@ -38,15 +38,15 @@ document.addEventListener('DOMContentLoaded', function () {
     var secRota = secRotation(count)
     var hourRota = hrRotation(count / 3600)
 
-    var handsArr = [seconds, minute, hour]
-    var rotaArr = [secRota, minRota, hourRota]
+    // var handsArr = [seconds, minute, hour]
+    // var rotaArr = [secRota, minRota, hourRota]
 
-    for (var i = 0; i < handsArr.length; i++) {
-      handsArr[i].style.transform = 'rotate(' + rotaArr[i] + 'deg)'
-    }
-    // seconds.style.transform = 'rotate(' + secRotation(secTime) + 'deg)'
-    // minute.style.transform = 'rotate(' + minRotation(minTime) + 'deg)'
-    // hour.style.transform = 'rotate(' + hrRotation(hourTime) + 'deg)'
+    // for (var i = 0; i < handsArr.length; i++) {
+    //   handsArr[i].style.transform = 'rotate(' + rotaArr[i] + 'deg)'
+    // }
+    seconds.style.transform = 'rotate(' + secRota + 'deg)'
+    minute.style.transform = 'rotate(' + minRota + 'deg)'
+    hour.style.transform = 'rotate(' + hourRota + 'deg)'
     count++
   }
 
