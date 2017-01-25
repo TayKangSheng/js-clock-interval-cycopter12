@@ -1,10 +1,10 @@
 #second {
-  position:absolute;
-  z-index: 2;
+
+  z-index: 3;
 }
 
 #clock {
-  position:absolute;
+position: relative
 }
 
 #clock img {
@@ -12,10 +12,10 @@
 }
 
 #hour {
-  position:absolute;
+
   z-index:1
 }
 
 #minute {
-  position:absolute;
+z-index:2
 }
