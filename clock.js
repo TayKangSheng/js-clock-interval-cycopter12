@@ -8,21 +8,18 @@ document.addEventListener('DOMContentLoaded', function () {
   clock.appendChild(seconds)
 
 
-  var now = new Date()
-    var h = now.getHours()
-    var m = now.getMinutes()
-    var s = now.getSeconds()
 
-  var count = 0
+
+  // var count = 0
 
   function secRotation (secTime) {
-    return (secTime / 60) * 360
+    return (secTime /60 ) * 360
   }
   function hrRotation (hourTime) {
     return (hourTime / 12) * 360
   }
   function minRotation (minTime) {
-    return (minTime / 60) * 360
+    return (minTime /60 ) * 360
   }
 
   // Make second move first
@@ -34,9 +31,14 @@ document.addEventListener('DOMContentLoaded', function () {
   // secDegree+=6
 
   function setRotation () {
-    var minRota = minRotation(count / 60)
-    var secRota = secRotation(count)
-    var hourRota = hrRotation(count / 3600)
+    var now = new Date()
+      var currentHour = now.getHours()
+      var currentMinute = now.getMinutes()
+      var currentSecond = now.getSeconds()
+
+    var minRota = minRotation(currentMinute) // divide by 60 to get secs
+    var secRota = secRotation(currentSecond)
+    var hourRota = hrRotation(currentHour) //divide by 3600 to get hours
 
     // var handsArr = [seconds, minute, hour]
     // var rotaArr = [secRota, minRota, hourRota]
@@ -47,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function () {
     seconds.style.transform = 'rotate(' + secRota + 'deg)'
     minute.style.transform = 'rotate(' + minRota + 'deg)'
     hour.style.transform = 'rotate(' + hourRota + 'deg)'
-    count++
+    // count++
   }
 
 
